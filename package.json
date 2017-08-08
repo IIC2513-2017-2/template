@@ -6,11 +6,13 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "lint": "eslint --fix ./src index.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0"
+    "eslint": "^4.3.0",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
     "koa": "^2.3.0",
