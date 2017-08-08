@@ -1,33 +1,29 @@
-const Koa = require('koa')
-const Router = require('koa-router')
+const Koa = require('koa');
+const KoaRouter = require('koa-router');
 
-const app = new Koa()
-const router = new Router()
+const app = new Koa();
+const router = new KoaRouter();
 
-router.use(async (ctx, next) => {
-  console.log('Headers', ctx.headers)
-  console.log('Params', ctx.params)
-  await next()
-})
+// router.use(async (ctx, next) => {
+//   console.log('Headers', ctx.headers);
+//   console.log('Params', ctx.params);
+//   await next();
+// });
 
-router.get('/', ctx => {
+router.get('/', (ctx) => {
   ctx.body = {
-    message: "Hello world"
-  }
-})
+    message: 'Hello world',
+  };
+});
 
-router.post('/', ctx => {
+router.post('/', (ctx) => {
   ctx.body = {
-    message: "What u doing?"
-  }
-})
+    message: 'What u doing?',
+  };
+});
 
-app.use(router.routes())
+app.use(router.routes());
 
-const PORT = process.env.PORT || 3000
-app.listen(PORT, err => {
-  if (err) {
-    return console.error('Failed', err)
-  }
-  console.log(`Listening on port ${PORT}`)
-})
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT);
