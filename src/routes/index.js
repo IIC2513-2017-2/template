@@ -1,28 +1,10 @@
 const KoaRouter = require('koa-router');
-
-const hello = require('./hello');
+const pkg = require('../../package.json');
 
 const router = new KoaRouter();
 
-// TODO remove this?
-router.use(async (ctx, next) => {
-  console.log('Headers', ctx.headers); // eslint-disable-line
-  console.log('Params', ctx.params); // eslint-disable-line
-  await next();
-});
-
 router.get('/', (ctx) => {
-  ctx.body = {
-    message: 'Hello world',
-  };
+  ctx.body = `<h1>Hello world. App web version ${pkg.version}</h1>`;
 });
-
-router.post('/', (ctx) => {
-  ctx.body = {
-    message: 'What u doing?',
-  };
-});
-
-router.use('/hello', hello.routes());
 
 module.exports = router;
