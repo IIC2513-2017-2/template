@@ -2,7 +2,7 @@
 
 - [koa](https://github.com/koajs/koa)
 - [koa-router](https://github.com/alexmingoia/koa-router)
-- [koa-views](https://github.com/queckezz/koa-views)
+- [koa-ejs](https://github.com/koajs/ejs)
 - [koa-orm](https://github.com/d-band/koa-orm)
 - [koa-session](https://github.com/koajs/session)
 
