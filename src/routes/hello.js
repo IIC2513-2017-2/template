@@ -8,10 +8,10 @@ router.get('hello', '/', async (ctx) => {
   });
 });
 
-router.get('hello.name', '/:name', (ctx) => {
-  ctx.body = {
-    message: `Hello ${ctx.params.name}!`,
-  };
+router.get('hello.name', '/:name', async (ctx) => {
+  await ctx.render('hello/name', {
+    name: ctx.params.name,
+  });
 });
 
 module.exports = router;
