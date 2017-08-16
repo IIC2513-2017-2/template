@@ -19,6 +19,9 @@
     "koa": "^2.3.0",
     "koa-ejs": "^4.1.0",
     "koa-logger": "^3.0.1",
-    "koa-router": "^7.2.1"
+    "koa-router": "^7.2.1",
+    "pg": "^7.1.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.5.0"
   }
 }
