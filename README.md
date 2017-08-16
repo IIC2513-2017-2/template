@@ -27,6 +27,10 @@ createdb iic2513template_dev
 ```sh
 yarn global add sequelize-cli
 ```
+### Run migrations
+```sh
+sequelize db:migrate
+```
 
 ## Database Setup (production)
 
