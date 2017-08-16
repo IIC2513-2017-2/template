@@ -3,8 +3,8 @@ const pkg = require('../../package.json');
 
 const router = new KoaRouter();
 
-router.get('/', (ctx) => {
-  ctx.body = `<h1>Hello world. App web version ${pkg.version}</h1>`;
+router.get('/', async (ctx) => {
+  await ctx.render('index', { appVersion: pkg.version });
 });
 
 module.exports = router;

@@ -2,9 +2,10 @@ const KoaRouter = require('koa-router');
 
 const router = new KoaRouter();
 
-router.get('hello', '/', (ctx) => {
-  ctx.type = 'html';
-  ctx.body = `Hello… <a href="${router.url('hello.name', 'your-name-here')}">your-name-here</a>.`;
+router.get('hello', '/', async (ctx) => {
+  await ctx.render('hello/index', {
+    nameUrl: name => ctx.router.url('hello.name', name),
+  });
 });
 
 router.get('hello.name', '/:name', (ctx) => {
