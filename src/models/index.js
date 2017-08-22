@@ -1,26 +1,19 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-const configFile = require('../db/database.json');
+const fullConfig = require('../config/database.js');
 
 const basename = path.basename(module.filename);
-
 const env = process.env.NODE_ENV || 'development';
-const config = configFile[env];
+
+let config = fullConfig[env];
+if (config.extend) {
+  config = Object.assign({}, fullConfig[config.extend], config);
+}
 
 const db = {};
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-  sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config,
-  );
-}
+const sequelize = new Sequelize(config);
 
 fs
   .readdirSync(__dirname)

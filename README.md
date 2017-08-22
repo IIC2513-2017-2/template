@@ -22,14 +22,9 @@ TODO: Clone and install dependencies
 createdb iic2513template_dev
 ```
 
-### Install `sequelize-cli`
-
-```sh
-yarn global add sequelize-cli
-```
 ### Run migrations
 ```sh
-sequelize db:migrate
+./node_modules/.bin/sequelize db:migrate
 ```
 
 ## Database Setup (production)
