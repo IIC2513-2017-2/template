@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   default: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
@@ -19,3 +19,12 @@ module.exports = {
     database: 'iic2513template_production',
   },
 };
+
+Object.keys(config).forEach((configKey) => {
+  const configValue = config[configKey];
+  if (configValue.extend) {
+    config[configKey] = Object.assign({}, config[configValue.extend], configValue);
+  }
+});
+
+module.exports = config;

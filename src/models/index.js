@@ -1,15 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-const fullConfig = require('../config/database.js');
+const config = require('../config/database.js')[process.env.NODE_ENV || 'development'];
 
 const basename = path.basename(module.filename);
-const env = process.env.NODE_ENV || 'development';
-
-let config = fullConfig[env];
-if (config.extend) {
-  config = Object.assign({}, fullConfig[config.extend], config);
-}
 
 const db = {};
 
