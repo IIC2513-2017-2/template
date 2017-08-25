@@ -8,6 +8,12 @@ router.get('hello', '/', async (ctx) => {
   });
 });
 
+router.post('hello', '/', (ctx) => {
+  console.log(ctx.request.body.fields);
+  console.log(ctx.request.body.files);
+  ctx.body = { status: 'OK' };
+});
+
 router.get('hello.name', '/:name', (ctx) => {
   ctx.body = { message: `Hello ${ctx.params.name}!` };
 });
