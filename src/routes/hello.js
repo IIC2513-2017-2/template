@@ -9,8 +9,7 @@ router.get('hello', '/', async (ctx) => {
 });
 
 router.post('hello', '/', (ctx) => {
-  console.log(ctx.request.body.fields);
-  console.log(ctx.request.body.files);
+  console.log(ctx.request.body);
   ctx.body = { status: 'OK' };
 });
 
