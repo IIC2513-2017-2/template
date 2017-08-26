@@ -24,6 +24,7 @@ app.use(koaLogger());
 // parse request body
 app.use(koaBody({
   multipart: true,
+  keepExtensions: true,
 }));
 
 // Configure EJS views
