@@ -10,15 +10,11 @@ const app = new Koa();
 
 const developmentMode = app.env === 'development';
 
-app.use(koaLogger());
+// expose ORM through context's prototype
+app.context.orm = orm;
 
-// expose ORM in context
-app.use((ctx, next) => {
-  if (!ctx.orm) {
-    ctx.orm = orm;
-  }
-  return next();
-});
+// log requests
+app.use(koaLogger());
 
 // Configure EJS views
 render(app, {
