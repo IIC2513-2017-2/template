@@ -5,8 +5,8 @@ Template built with [koa](http://koajs.com/) for IIC2513 - Tecnologías y Aplica
 ## Prerequisites:
 * [PostgreSQL](https://github.com/IIC2513-2017-2/syllabus/wiki/Getting-Started#postgresql)
   * you will need a database with name and user/password as configured in `src/config/database.js`
-* [Node.js v8.4.0](https://github.com/IIC2513-2017-2/syllabus/wiki/Node.js) or above
-* [Yarn](https://yarnpkg.com)
+* [Node.js v8.7.0](https://github.com/IIC2513-2017-2/syllabus/wiki/Node.js) or above
+* [Yarn 1.1.0](https://yarnpkg.com) or above
 
 ## Project Setup
 
@@ -30,7 +30,7 @@ createdb iic2513template_dev
 
 ### Run migrations
 ```sh
-./node_modules/.bin/sequelize db:migrate
+yarn run sequelize db:migrate
 ```
 
 ## Run the app!
@@ -48,7 +48,7 @@ node index.js
 or, if you want automatic restart after any change in your files
 
 ```sh
-./node_modules/.bin/nodemon
+yarn dev
 ```
 
 Now go to http://localhost:3000 and start browsing :)
