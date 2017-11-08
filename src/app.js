@@ -70,7 +70,7 @@ app.use(koaBody({
 }));
 
 app.use((ctx, next) => {
-  ctx.request.method = override.call(ctx, ctx.request.body);
+  ctx.request.method = override.call(ctx, ctx.request.body.fields || ctx.request.body);
   return next();
 });
 
